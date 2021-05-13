@@ -4,12 +4,11 @@ font-family: 'Staatliches', cursive;
 */
 
 :root{
-	--branding: #9c2780;
-	--branding-dark: #89119d;
-	--second: #ffce00;
-	--second-dark: rgb(233,287,2);
-	--white: #fff;
-	--black: #000;
+	--branding: #3a7bd5;
+	--branding-dark: #29599c;
+	--second: #00d2ff;
+	--white: #f7f7f7;
+	--black: #44463b;
 
 	--font-1: 'Staatliches', cursive;
 	--font-2: 'Open Sans', sans-serif;
@@ -30,9 +29,12 @@ html{
 /*Globales*/
 
 body{
-	font-size: 1.6rem;
-	background-color: var(--branding);
-	line-height: 1.5;
+	background: #00d2ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
 }
 
 p{
@@ -49,13 +51,14 @@ img{
 }
 
 .container{
+	width: 90%;
 	max-width: 120rem;
 	margin: 0 auto;
 }
 
 h1, h2, h3{
 	text-align: center;
-	color: var(--second);
+	color: var(--white);
 	font-family: var(--font-1);
 }
 
@@ -98,7 +101,7 @@ h3{
 	font-family: var(--font-1);
 	color: var(--white);
 	font-size: 3rem;
-	transition: .5s;
+	transition: color .5s;
 }
 
 .nav__a--active{
@@ -106,5 +109,69 @@ h3{
 }
 
 .nav__a:hover, .nav__a--active{
+	color: var(--second);
+}
+
+/**Footer**/
+
+.footer{
+	background-color: var(--branding-dark);
+	padding: 1rem 0;
+	margin-top: 2rem;
+}
+
+.footer__text{
+	text-align: center;
+	font-family: var(--font-1);
+	color: var(--white);
+}
+
+
+/**Producto**/
+
+.grid{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+
+@media (min-width: 480px){
+	.grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 768px){
+	.grid{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.producto{
+	background-color: var(--branding-dark);
+	padding: 1rem;
+	border-radius: .5rem;
+	-webkit-box-shadow: 5px 5px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 3px -1px rgba(0,0,0,0.75);
+}
+
+.producto__img{
+	width: 100%
+}
+
+.producto__info{
+
+}
+
+.producto__name, .producto__price{
+	font-family: var(--font-1);
+	margin: 1rem 0;
+	text-align: center;
+	color: var(--white);
+	line-height: 1.2;
+}
+
+.producto__price{
 	color: var(--second);
 }
